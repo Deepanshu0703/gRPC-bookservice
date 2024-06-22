@@ -18,9 +18,7 @@ dependencies {
     implementation 'io.grpc:grpc-netty-shaded:1.54.1'
     implementation 'io.grpc:grpc-protobuf:1.54.1'
     implementation 'io.grpc:grpc-stub:1.54.1'
-    // Update the Protobuf version
     implementation 'com.google.protobuf:protobuf-java:3.23.2'
-    // Update the Guava version
     implementation 'com.google.guava:guava:31.1-jre'
     implementation 'javax.annotation:javax.annotation-api:1.3.2'
     testImplementation 'junit:junit:4.13.2'
@@ -31,12 +29,10 @@ dependencies {
 
 protobuf {
     protoc {
-        // Update the Protobuf compiler version
         artifact = "com.google.protobuf:protoc:3.23.2"
     }
     plugins {
         grpc {
-            // Update the gRPC plugin version
             artifact = 'io.grpc:protoc-gen-grpc-java:1.54.1'
         }
     }

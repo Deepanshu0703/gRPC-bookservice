@@ -1,30 +1,17 @@
 package com.example.bookstore;
 
-import io.grpc.inprocess.InProcessChannelBuilder;
-import io.grpc.inprocess.InProcessServerBuilder;
+import io.grpc.inprocess.*;
 import io.grpc.testing.GrpcCleanupRule;
-import org.junit.Rule;
-import org.junit.Test;
-import io.grpc.ManagedChannel;
-import io.grpc.Server;
-
+import org.junit.*;
+import io.grpc.*;
 import static org.junit.Assert.*;
-
-import com.example.bookstore.BookOuterClass.Book;
-import com.example.bookstore.BookOuterClass.AddBookRequest;
-import com.example.bookstore.BookOuterClass.AddBookResponse;
-import com.example.bookstore.BookOuterClass.UpdateBookRequest;
-import com.example.bookstore.BookOuterClass.UpdateBookResponse;
-import com.example.bookstore.BookOuterClass.DeleteBookRequest;
-import com.example.bookstore.BookOuterClass.DeleteBookResponse;
-import com.example.bookstore.BookOuterClass.GetBooksRequest;
-import com.example.bookstore.BookOuterClass.GetBooksResponse;
+import com.example.bookstore.BookOuterClass.*;
 
 public class BookServiceImplTest {
     @Rule
     public final GrpcCleanupRule grpcCleanup = new GrpcCleanupRule();
 
-    private BookServiceGrpc.BookServiceBlockingStub bookServiceStub;
+    private final BookServiceGrpc.BookServiceBlockingStub bookServiceStub;
 
     public BookServiceImplTest() throws Exception {
         String serverName = InProcessServerBuilder.generateName();

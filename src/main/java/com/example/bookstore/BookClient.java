@@ -1,7 +1,6 @@
 package com.example.bookstore;
 
-import io.grpc.ManagedChannel;
-import io.grpc.ManagedChannelBuilder;
+import io.grpc.*;
 
 public class BookClient {
     private final ManagedChannel channel;
